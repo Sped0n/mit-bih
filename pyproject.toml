@@ -5,3 +5,6 @@ description = "mit-bih dataset"
 readme = "README.md"
 requires-python = ">=3.11"
 dependencies = ["numpy<2.0", "tqdm>=4.66.5", "wfdb>=4.1.2"]
+
+[tool.pyright]
+typeCheckingMode = "strict"
