@@ -8,3 +8,6 @@ dependencies = ["numpy<2.0", "tqdm>=4.66.5", "wfdb>=4.1.2"]
 
 [tool.pyright]
 typeCheckingMode = "strict"
+reportUnknownMemberType = false
+reportAny = false
+reportImplicitOverride = false

@@ -17,13 +17,13 @@ def is_target(symbol: str) -> bool:
 for path in tqdm(glob("./assets/*.dat", recursive=False)):
     record_name: str = path[:-4]
     record = np.array(
-        wfdb.rdrecord(record_name, channel_names=["MLII"]).p_signal,  # pyright: ignore[reportUnknownMemberType]
+        wfdb.rdrecord(record_name, channel_names=["MLII"]).p_signal,
         dtype=np.float32,
     )
-    annotation = wfdb.rdann(record_name, "atr")  # pyright: ignore[reportUnknownMemberType]
-    if annotation.symbol is None:  # pyright: ignore[reportUnknownMemberType]
+    annotation = wfdb.rdann(record_name, "atr")
+    if annotation.symbol is None:
         continue
-    for index, symbol in enumerate(annotation.symbol):  # pyright: ignore[reportUnknownMemberType, reportUnknownVariableType, reportUnknownArgumentType]
+    for index, symbol in enumerate(annotation.symbol):  # pyright: ignore[reportUnknownVariableType, reportUnknownArgumentType]
         assert isinstance(symbol, str)
         if not is_target(symbol):
             continue
