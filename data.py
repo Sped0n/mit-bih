@@ -7,7 +7,7 @@ from tqdm import tqdm
 
 result: dict[str, NDArray[Any]] = {}
 for type in ["N", "A", "V", "L", "R"]:
-    result[type] = np.empty([1, 300])
+    result[type] = np.empty([0, 300])
 
 
 def is_target(symbol: str) -> bool:
